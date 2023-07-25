@@ -20,6 +20,9 @@
               <a class="nav-link" href="/services">Services</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/support">Support</a>
+            </li>
+            <li class="nav-item">
               <a id="loginLink" class="nav-link" href="/login">Login</a>
             </li>
           </ul>
