@@ -40,12 +40,13 @@ const getAPIData = async (endpoint = '', request = initRequest()) => {
     try {
         const response = await fetch(`${base_url}${endpoint}`, request);
         const data = await response.json();
+        console.log(data);
         return data;
 
     } catch (err) {
         console.log('API error (store) ', err.message);
     } finally {
-
+        
     }
 };
 
@@ -75,8 +76,6 @@ export const getsupportTicketsByArea= async (area_id = 0) => {
     if (area_id > 0) {
         const data = await getAPIData(`/support/byarea/${area_id}`);
         supportAreas.set(data);
-    } else {
-        getAllsupportTickets();
     }
 
 };
@@ -92,3 +91,4 @@ export const addNewSupportTicket= async (support = '') => {
     } else {
         console.log('Store: Add new Support Ticket failed: missing support ticket');
     }
+}

@@ -6,7 +6,7 @@ import { addNewSupportTicket } from '../../stores/supportStore.js';
 
 
 export const actions = {
-    addproduct: async ({request }) => {
+    addsupport: async ({request }) => {
       let success = false;
 
       // get data from the POST request
@@ -14,14 +14,14 @@ export const actions = {
 
       // read each value - to do: add validation
       const support = {
-        area_id: Number(form_data.get('area_id')),
+        supportArea_id: Number(form_data.get('supportArea_id')),
         name: form_data.get('name'),
         message: form_data.get('message'),
         email: form_data.get('email')
       }
 
       // Basic validation
-      if (support.area_id > 0 &&
+      if (support.supportArea_id > 0 &&
           support.name != '' &&
           support.message != '' &&
           support.email != ''
